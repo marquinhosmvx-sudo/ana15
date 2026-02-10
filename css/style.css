@@ -160,3 +160,28 @@ button:hover {
   transform: scale(1.02);
 }
 
+/* Formulário */
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  margin: 8px 0;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.formulario textarea {
+  resize: none;
+  height: 80px;
+}
+
+.formulario button {
+  margin-top: 12px;
+}
