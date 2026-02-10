@@ -31,3 +31,18 @@ function criarBorboletas() {
   }
 }
 
+function borboletasFundo() {
+  setInterval(() => {
+    let b = document.createElement("img");
+    b.src = "img/borboleta.png";
+    b.className = "butterfly-bg";
+
+    b.style.left = Math.random() * 100 + "vw";
+
+    document.body.appendChild(b);
+
+    setTimeout(() => b.remove(), 20000);
+  }, 3000);
+}
+
+borboletasFundo();
