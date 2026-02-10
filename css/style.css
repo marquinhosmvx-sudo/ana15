@@ -23,6 +23,24 @@ body {
 /* Título */
 h1 {
   color: white;
+
+  .butterfly {
+  position: absolute;
+  width: 40px;
+  animation: fly 1.5s linear forwards;
+}
+
+@keyframes fly {
+  from {
+    transform: translate(0, 0) scale(0.5);
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--x), var(--y)) scale(1.2);
+    opacity: 0;
+  }
+}
+
   font-size: 28px;
   margin-bottom: 20px;
 }
