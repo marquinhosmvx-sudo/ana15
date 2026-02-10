@@ -116,4 +116,19 @@ button:hover {
   }
 }
 
+/* Botão aparece após o título */
+.botao-entrar {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: surgirBotao 2s ease-out forwards;
+  animation-delay: 2s;
+}
+
+/* Animação botão */
+@keyframes surgirBotao {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
