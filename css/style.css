@@ -83,3 +83,10 @@ button {
   box-shadow: 0 0 8px white, 0 0 15px #9ed9ff;
   transition: transform 6s linear, opacity 6s linear;
 }
+/* Efeito elegante ao passar o mouse ou tocar */
+button:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 20px rgba(126,200,255,0.9),
+    inset 0 0 10px rgba(255,255,255,0.6);
+}
