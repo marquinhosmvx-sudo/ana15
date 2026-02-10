@@ -185,3 +185,20 @@ button:hover {
 .formulario button {
   margin-top: 12px;
 }
+/* Cartões de local */
+.card-local {
+  background: white;
+  padding: 16px;
+  border-radius: 18px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.card-local h3 {
+  margin-top: 0;
+  color: #4fa3e3;
+}
+
+.card-local p {
+  color: #555;
+}
