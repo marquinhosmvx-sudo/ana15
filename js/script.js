@@ -58,3 +58,25 @@ function criarBorboletasFundo() {
     setTimeout(() => b.remove(), 8000);
   }, 1500);
 }
+/* Partículas mágicas */
+function criarParticulas() {
+  setInterval(() => {
+    let p = document.createElement("div");
+    p.className = "sparkle";
+
+    p.style.left = Math.random() * window.innerWidth + "px";
+    p.style.top = window.innerHeight + "px";
+
+    document.body.appendChild(p);
+
+    setTimeout(() => {
+      p.style.transform =
+        `translateY(-${window.innerHeight + 100}px) scale(1.5)`;
+      p.style.opacity = "0";
+    }, 50);
+
+    setTimeout(() => p.remove(), 6000);
+  }, 300);
+}
+
+criarParticulas();
