@@ -78,3 +78,18 @@ button:hover {
   margin: 10px 0;
 }
 
+.butterfly-bg {
+  position: absolute;
+  width: 30px;
+  opacity: 0.6;
+  animation: float 20s linear infinite;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-10vh);
+  }
+}
