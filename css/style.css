@@ -11,7 +11,7 @@ body {
 
 .home {
   height: 100vh;
-  background: url("../img/fundo.jpg") center/cover no-repeat;
+  background: url("../img/fundo.png") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
