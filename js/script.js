@@ -80,3 +80,17 @@ function criarParticulas() {
 }
 
 criarParticulas();
+function abrirMapa(tipo) {
+  let endereco = "";
+
+  if (tipo === "CERIMONIA") {
+    endereco = "ENDERECO CERIMONIA";
+  } else {
+    endereco = "ENDERECO RECEPCAO";
+  }
+
+  let url = "https://www.google.com/maps/search/?api=1&query=" +
+            encodeURIComponent(endereco);
+
+  window.open(url, "_blank");
+}
