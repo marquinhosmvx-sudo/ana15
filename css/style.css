@@ -1,12 +1,17 @@
+/* RESET BÁSICO */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-/* Página inicial */
+/* ========================= */
+/* HOME - Página Inicial */
+/* ========================= */
+
 .home {
   height: 100vh;
-  background: url("../img/fundo.png") center/cover no-repeat;
+  background: url("../img/fundo.jpg") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,52 +20,40 @@ body {
 /* Caixa central */
 .overlay {
   text-align: center;
-  backdrop-filter: blur(3px);
-  padding: 20px;
+  backdrop-filter: blur(4px);
+  padding: 30px;
   border-radius: 20px;
 }
 
 /* Título */
-h1 {
+.overlay h1 {
   color: white;
-
-  .butterfly {
-  position: absolute;
-  width: 40px;
-  animation: fly 1.5s linear forwards;
-}
-
-@keyframes fly {
-  from {
-    transform: translate(0, 0) scale(0.5);
-    opacity: 1;
-  }
-  to {
-    transform: translate(var(--x), var(--y)) scale(1.2);
-    opacity: 0;
-  }
-}
-
   font-size: 28px;
   margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-/* Botões */
+/* Botão principal */
 button {
   padding: 15px 30px;
   border-radius: 30px;
   border: none;
   font-size: 18px;
-  background: #7ec8ff;
+  background: linear-gradient(45deg, #7ec8ff, #4fa3e3);
   color: white;
   cursor: pointer;
+  transition: 0.3s;
 }
 
+/* Hover botão */
 button:hover {
-  background: #5fb5f0;
+  transform: scale(1.05);
 }
 
-/* Página menu */
+/* ========================= */
+/* Página MENU */
+/* ========================= */
+
 .menu-page {
   background: #eaf6ff;
   height: 100vh;
@@ -75,36 +68,48 @@ button:hover {
 
 .menu button {
   width: 100%;
-  margin: 10px 0;
+  margin: 12px 0;
 }
+
+/* ========================= */
+/* BORBOLETAS EXPLOSÃO */
+/* ========================= */
+
+.butterfly {
+  position: absolute;
+  width: 40px;
+  pointer-events: none;
+  animation: fly 1.5s linear forwards;
+}
+
+@keyframes fly {
+  from {
+    transform: translate(0, 0) scale(0.5);
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--x), var(--y)) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* ========================= */
+/* BORBOLETAS FUNDO */
+/* ========================= */
 
 .butterfly-bg {
   position: absolute;
   width: 30px;
-  opacity: 0.6;
-  animation: float 20s linear infinite;
+  opacity: 0.7;
+  pointer-events: none;
+  animation: float 20s linear forwards;
 }
 
 @keyframes float {
   from {
-    transform: translateY(100vh);
+    transform: translateY(0);
   }
   to {
-    transform: translateY(-10vh);
-  }
-}
-.butterfly-bg {
-  position: absolute;
-  width: 30px;
-  opacity: 0.6;
-  animation: float 20s linear infinite;
-}
-
-@keyframes float {
-  from {
-    transform: translateY(100vh);
-  }
-  to {
-    transform: translateY(-10vh);
+    transform: translateY(-110vh);
   }
 }
