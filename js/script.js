@@ -15,7 +15,7 @@ function entrar() {
 function explosaoBorboletas() {
   for (let i = 0; i < 15; i++) {
     let b = document.createElement("img");
-    b.src = "img/borboleta.png";
+    b.src = "img/borboleta_.gif";
     b.className = "butterfly";
 
     b.style.left = "50%";
