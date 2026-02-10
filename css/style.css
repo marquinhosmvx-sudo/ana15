@@ -64,3 +64,15 @@ button {
   opacity: 0.9;
   transition: transform 4s ease-out, opacity 4s ease-out;
 }
+/* PARTÍCULAS MÁGICAS */
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+  box-shadow: 0 0 8px white, 0 0 15px #9ed9ff;
+  transition: transform 6s linear, opacity 6s linear;
+}
