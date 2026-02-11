@@ -115,10 +115,13 @@ function atualizarContador() {
   let agora = new Date();
   let diferenca = dataEvento - agora;
 
-  if (diferenca <= 0) {
-    document.getElementById("contador").innerText =
-      "Hoje é o grande dia!";
-    return;
+if (diferenca <= 0) {
+  let contador = document.getElementById("contador");
+  contador.innerText = "Hoje é o dia da Ana Maria!";
+  contador.classList.add("dia-festa");
+  return;
+}
+
   }
 
   let dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
