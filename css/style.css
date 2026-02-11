@@ -72,7 +72,19 @@ button:active {
   transform: scale(0.97);
 }
 
-.menu-botao,
+.menu-botao {
+  width: 100%;
+  max-width: 420px;
+  margin: 6px auto;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;              /* remove borda branca */
+  background: #2f6fa3;       /* azul mais claro */
+  color: white;
+  font-size: clamp(14px, 4vw, 18px);
+  display: block;
+}
+
 .botao-voltar {
   width: auto;
   padding: 8px 18px;
