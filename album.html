@@ -3,33 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Álbum da Festa</title>
+<title>Álbum</title>
 
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="menu-page">
+<body>
 
-<div class="menu">
+<div class="page">
 
-<h2 class="menu-titulo">Álbum da Festa</h2>
+<div class="topo"></div>
 
-<p style="text-align:center;">
-Envie e veja as fotos da festa!
-</p>
+<div class="centro">
 
-<button onclick="window.open('https://photos.app.goo.gl/SHqUcCnbAs5MufKE7', '_blank')">
-📷 Enviar ou ver fotos
+<div class="card-local">
+
+<h3>Álbum da Festa</h3>
+
+<p>Envie e veja fotos do evento.</p>
+
+<button onclick="window.open('LINK_DO_ALBUM')">
+Abrir álbum
 </button>
 
 </div>
 
-</body>
-</html>
+</div>
+
 <div class="rodape">
-<button class="botao-voltar"
-onclick="location.href='menu.html'">
+<button class="botao-voltar" onclick="navegar('menu.html')">
 Voltar ao menu
 </button>
 </div>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
