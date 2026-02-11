@@ -58,6 +58,9 @@ verificarLimiteConfirmacao();
 /* ========================= */
 function explodirBorboletas(botao) {
 
+  botao.classList.add("brilho-ativo");
+
+  
   const totalBorboletas = 500;
   const porLote = 25; // criadas em ondas
   const duracaoTotal = 8000;
