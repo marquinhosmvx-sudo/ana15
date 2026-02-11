@@ -2,7 +2,9 @@ function navegar(pagina) {
   window.location.href = pagina;
 }
 
-/* Contador */
+/* ========================= */
+/* CONTADOR */
+/* ========================= */
 function atualizarContador() {
 
   let dataEvento = new Date("2026-05-16T19:00:00");
@@ -29,7 +31,9 @@ function atualizarContador() {
 setInterval(atualizarContador, 60000);
 atualizarContador();
 
-/* Limite confirmação */
+/* ========================= */
+/* LIMITE CONFIRMAÇÃO */
+/* ========================= */
 function verificarLimiteConfirmacao() {
 
   let limite = new Date("2026-04-15T23:59:00");
@@ -49,90 +53,110 @@ function verificarLimiteConfirmacao() {
 }
 
 verificarLimiteConfirmacao();
+
+/* ========================= */
+/* EXPLOSÃO DE BORBOLETAS */
+/* ========================= */
 function explodirBorboletas(botao) {
 
-  let quantidade = 70; // MUITAS borboletas
+  let quantidade = 70;
 
-  /* posição do botão */
   let rect = botao.getBoundingClientRect();
   let origemX = rect.left + rect.width / 2;
   let origemY = rect.top + rect.height / 2;
 
-  for (let i = 0; i < quantidade; i++)
- {
+  for (let i = 0; i < quantidade; i++) {
 
     let b = document.createElement("img");
     b.src = "img/borboleta.gif";
     b.className = "borboleta";
 
-/* define profundidade */
-let camada = Math.random();
+    /* profundidade */
+    let camada = Math.random();
 
-if (camada < 0.4) {
-  b.classList.add("borboleta-fundo");
-} else if (camada < 0.75) {
-  b.classList.add("borboleta-meio");
-} else {
-  b.classList.add("borboleta-frente");
-}
+    if (camada < 0.4) {
+      b.classList.add("borboleta-fundo");
+    } else if (camada < 0.75) {
+      b.classList.add("borboleta-meio");
+    } else {
+      b.classList.add("borboleta-frente");
+    }
 
-    b.style.left = origemX + "px";
-    b.style.top = origemY + "px";
+    /* pequena variação na origem */
+    let offsetX = (Math.random() - 0.5) * 40;
+    let offsetY = (Math.random() - 0.5) * 40;
+
+    b.style.left = (origemX + offsetX) + "px";
+    b.style.top = (origemY + offsetY) + "px";
 
     document.body.appendChild(b);
 
     setTimeout(() => {
 
-let x = (Math.random() - 0.5) * window.innerWidth * 1.8;
-let y = (Math.random() - 0.5) * window.innerHeight * 1.8;
+      /* direção radial real */
+      let anguloRad = Math.random() * Math.PI * 2;
+      let distancia = window.innerHeight * (0.7 + Math.random());
 
-/* algumas descem mais */
-if (Math.random() > 0.6) {
-  y += window.innerHeight * 0.6;
-}
+      let x = Math.cos(anguloRad) * distancia;
+      let y = Math.sin(anguloRad) * distancia;
 
-let escala = 1.8 + Math.random() * 2.5;
-let escalaBase = 1.5 + Math.random() * 2;
+      if (Math.random() > 0.6) {
+        y += window.innerHeight * 0.4;
+      }
 
-if (b.classList.contains("borboleta-frente")) {
-  escalaBase *= 1.8;
-}
+      /* escala conforme profundidade */
+      let escalaBase = 1.5 + Math.random() * 2;
 
-if (b.classList.contains("borboleta-fundo")) {
-  escalaBase *= 0.7;
-}
+      if (b.classList.contains("borboleta-frente")) {
+        escalaBase *= 1.8;
+      }
 
-let escala = escalaBase;
+      if (b.classList.contains("borboleta-fundo")) {
+        escalaBase *= 0.7;
+      }
 
-/* calcula direção para girar borboleta */
-let angulo = Math.atan2(y, x) * (180 / Math.PI);
+      let escala = escalaBase;
 
-b.style.transform =
-  `translate(${x}px, ${y}px)
-   rotate(${angulo}deg)
-   scale(${escala})`;
+      /* gira conforme direção */
+      let angulo = Math.atan2(y, x) * (180 / Math.PI);
 
-/* asas fora de sincronia */
-b.style.animationDuration =
-  (0.5 + Math.random() * 0.5) + "s";
       b.style.transform =
-        `translate(${x}px, ${y}px) scale(${escala})`;
+        `translate(${x}px, ${y}px)
+         rotate(${angulo}deg)
+         scale(${escala})`;
+
+      /* asas fora de sincronia */
+      b.style.animationDuration =
+        (0.5 + Math.random() * 0.6) + "s";
 
       b.style.opacity = "0";
 
     }, 50);
 
-    setTimeout(() => b.remove(), 6200);
+    let tempo = 6000;
+
+    if (b.classList.contains("borboleta-frente")) {
+      tempo = 7200;
+    }
+
+    if (b.classList.contains("borboleta-fundo")) {
+      tempo = 5000;
+    }
+
+    setTimeout(() => b.remove(), tempo);
   }
 
   vooContinuoBorboletas();
 
-  /* navega após animação */
   setTimeout(() => navegar("menu.html"), 3800);
 }
+
+/* ========================= */
+/* CONTINUAÇÃO DO VOO */
+/* ========================= */
 function vooContinuoBorboletas() {
 
-  let duracao = 3000; // tempo de continuação
+  let duracao = 3000;
 
   let intervalo = setInterval(() => {
 
@@ -140,7 +164,6 @@ function vooContinuoBorboletas() {
     b.src = "img/borboleta.gif";
     b.className = "borboleta borboleta-frente";
 
-    /* nasce na lateral */
     b.style.left = "-40px";
     b.style.top = Math.random() * window.innerHeight + "px";
 
@@ -151,23 +174,14 @@ function vooContinuoBorboletas() {
       let escala = 1.5 + Math.random() * 1.5;
 
       b.style.transform =
-        `translate(${window.innerWidth + 200}px, -100px) scale(${escala})`;
+        `translate(${window.innerWidth + 200}px, -100px)
+         scale(${escala})`;
 
       b.style.opacity = "0";
 
     }, 50);
 
-    let tempo = 6000;
-
-if (b.classList.contains("borboleta-frente")) {
-  tempo = 7200;
-}
-
-if (b.classList.contains("borboleta-fundo")) {
-  tempo = 5000;
-}
-
-setTimeout(() => b.remove(), tempo);
+    setTimeout(() => b.remove(), 6500);
 
   }, 300);
 
