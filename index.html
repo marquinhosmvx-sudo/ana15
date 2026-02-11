@@ -16,36 +16,79 @@
 
 <div class="centro">
 
-<!-- ===== CONVITE ATUAL ===== -->
+<!-- ========================= -->
+<!-- CONVITE (ANTES DA FESTA) -->
+<!-- ========================= -->
 <div id="convite">
 
 <div class="convite-home">
 
+<h2 class="nome-home">Ana Maria</h2>
 
 <button class="botao-selo"
 onclick="explodirBorboletas(this)">
 Meus Quinze Anos
 </button>
 
-</div>
 
 </div>
 
-<!-- ===== PÓS FESTA ===== -->
+</div>
+
+<!-- ========================= -->
+<!-- MODO LEMBRANÇA -->
+<!-- ========================= -->
 <div id="posfesta" style="display:none;">
 
 <div class="card-local">
 
-<h2>Obrigado por fazer parte</h2>
+<h2>Uma noite inesquecível ✨</h2>
 
 <p>
-Os 15 anos da Ana Maria foram inesquecíveis.
-Obrigado por compartilhar este momento!
+Os quinze anos da Ana Maria foram celebrados
+com pessoas especiais que tornaram essa noite
+ainda mais mágica.
+</p>
+
+</div>
+
+<div class="card-local">
+
+<h3>📷 Álbum da Festa</h3>
+
+<p>
+Reviva os melhores momentos dessa celebração.
 </p>
 
 <button onclick="navegar('album.html')">
-📷 Ver fotos da festa
+Ver fotos da festa
 </button>
+
+</div>
+
+<div class="card-local">
+
+<h3>🎥 Vídeo Oficial</h3>
+
+<p>
+Assista aos momentos mais emocionantes da festa.
+</p>
+
+<button onclick="window.open('LINK_VIDEO_FESTA')">
+Assistir vídeo
+</button>
+
+</div>
+
+<div class="card-local">
+
+<h3>💬 Mensagem da Ana Maria</h3>
+
+<p>
+"Foi um sonho compartilhar esse momento com
+cada um de vocês. Obrigada por fazerem parte
+da minha história."
+</p>
 
 </div>
 
@@ -62,11 +105,11 @@ Obrigado por compartilhar este momento!
 <script src="js/script.js"></script>
 
 <script>
-/* DATA DO EVENTO */
-const dataEvento = new Date("2026-05-16T23:59:00");
+/* ATIVA MODO LEMBRANÇA */
+const dataEvento = new Date("2026-05-18T00:00:00");
 const agora = new Date();
 
-if (agora > dataEvento) {
+if (agora >= dataEvento) {
   document.getElementById("convite").style.display = "none";
   document.getElementById("posfesta").style.display = "block";
 }
