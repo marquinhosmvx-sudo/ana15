@@ -96,3 +96,10 @@ button {
     font-size: 16px;
   }
 }
+/* Botão destaque rota */
+.botao-rota {
+  width: 95%;
+  font-size: 18px;
+  margin: 15px auto;
+  background: linear-gradient(45deg, #4fa3e3, #2b7cc0);
+}
