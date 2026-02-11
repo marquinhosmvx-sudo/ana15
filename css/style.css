@@ -28,12 +28,13 @@ body {
 }
 
 .centro {
-  flex-grow: 1;
+  flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  padding: 20px;
 }
+
 
 .rodape {
   margin-bottom: 20px;
