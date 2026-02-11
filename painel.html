@@ -1,4 +1,3 @@
-<!-- -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -28,10 +27,11 @@
 <h3>Lista completa</h3>
 
 <iframe
-src="LINK_PLANILHA_WEB"
+src="COLE_AQUI_LINK_PUBHTML"
 width="100%"
-height="500"
-frameborder="0">
+height="75vh"
+frameborder="0"
+style="border:none;">
 </iframe>
 
 </div>
@@ -49,7 +49,7 @@ Voltar
 <script src="js/script.js"></script>
 
 <script>
-const csvURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQK4QnkA32CW7GjNqyzTFD8BSeb6zJDMpqr2nd8HO6CEFkE52G1sloZa5EIceLU-o0XP9WoxrFnj0YT/pub?gid=2065005834&single=true&output=csv ";
+const csvURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQK4QnkA32CW7GjNqyzTFD8BSeb6zJDMpqr2nd8HO6CEFkE52G1sloZa5EIceLU-o0XP9WoxrFnj0YT/pub?gid=2065005834&single=true&output=csv";
 
 fetch(csvURL)
   .then(res => res.text())
@@ -68,7 +68,6 @@ fetch(csvURL)
 
       const colunas = linha.split(",");
 
-      // ajuste conforme ordem do seu forms
       const resposta = colunas[2] || "";
       const qtd = parseInt(colunas[3]) || 0;
 
