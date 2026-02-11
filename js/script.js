@@ -51,21 +51,24 @@ function verificarLimiteConfirmacao() {
 verificarLimiteConfirmacao();
 function borboletasConvite() {
 
-  let quantidade = 26;
+  let quantidade = 45; // MUITAS borboletas
 
   for (let i = 0; i < quantidade; i++) {
 
     let b = document.createElement("img");
+
+    /* AJUSTE O NOME SE NECESSÁRIO */
     b.src = "img/borboleta.gif";
+
     b.className = "borboleta";
 
-    /* metade atrás, metade na frente */
     if (Math.random() > 0.5) {
       b.classList.add("borboleta-frente");
     } else {
       b.classList.add("borboleta-fundo");
     }
 
+    /* origem no botão */
     b.style.left = "50%";
     b.style.top = "55%";
 
@@ -73,10 +76,10 @@ function borboletasConvite() {
 
     setTimeout(() => {
 
-      let x = (Math.random() - 0.5) * window.innerWidth * 1.3;
-      let y = (Math.random() - 0.5) * window.innerHeight * 1.3;
+      let x = (Math.random() - 0.5) * window.innerWidth * 1.6;
+      let y = (Math.random() - 0.5) * window.innerHeight * 1.6;
 
-      let escala = 1.5 + Math.random() * 1.8;
+      let escala = 1.5 + Math.random() * 2.2;
 
       b.style.transform =
         `translate(${x}px, ${y}px) scale(${escala})`;
@@ -85,6 +88,6 @@ function borboletasConvite() {
 
     }, 50);
 
-    setTimeout(() => b.remove(), 2600);
+    setTimeout(() => b.remove(), 4200);
   }
 }
