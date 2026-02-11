@@ -46,7 +46,6 @@ function verificarLimiteConfirmacao() {
 
   if (agora > limite) {
     iframe.style.display = "none";
-
     msg.innerHTML =
       "<p style='color:white;'>O prazo para confirmação foi encerrado.</p>";
   }
@@ -55,11 +54,11 @@ function verificarLimiteConfirmacao() {
 verificarLimiteConfirmacao();
 
 /* ========================= */
-/* EXPLOSÃO DE BORBOLETAS */
+/* EXPLOSÃO PRINCIPAL */
 /* ========================= */
 function explodirBorboletas(botao) {
 
-  let quantidade = 70;
+  let quantidade = 110; // MAIS borboletas
 
   let rect = botao.getBoundingClientRect();
   let origemX = rect.left + rect.width / 2;
@@ -71,7 +70,6 @@ function explodirBorboletas(botao) {
     b.src = "img/borboleta.gif";
     b.className = "borboleta";
 
-    /* profundidade */
     let camada = Math.random();
 
     if (camada < 0.4) {
@@ -82,9 +80,9 @@ function explodirBorboletas(botao) {
       b.classList.add("borboleta-frente");
     }
 
-    /* pequena variação na origem */
-    let offsetX = (Math.random() - 0.5) * 40;
-    let offsetY = (Math.random() - 0.5) * 40;
+    /* variação inicial */
+    let offsetX = (Math.random() - 0.5) * 60;
+    let offsetY = (Math.random() - 0.5) * 60;
 
     b.style.left = (origemX + offsetX) + "px";
     b.style.top = (origemY + offsetY) + "px";
@@ -93,70 +91,60 @@ function explodirBorboletas(botao) {
 
     setTimeout(() => {
 
-      /* direção radial real */
+      /* espalhamento real 360° */
       let anguloRad = Math.random() * Math.PI * 2;
-      let distancia = window.innerHeight * (0.7 + Math.random());
+      let distancia = window.innerHeight * (0.8 + Math.random());
 
       let x = Math.cos(anguloRad) * distancia;
       let y = Math.sin(anguloRad) * distancia;
 
+      /* algumas descem mais */
       if (Math.random() > 0.6) {
-        y += window.innerHeight * 0.4;
+        y += window.innerHeight * 0.5;
       }
 
-      /* escala conforme profundidade */
-      let escalaBase = 1.5 + Math.random() * 2;
+      /* escala por profundidade */
+      let escala = 1.4 + Math.random() * 2.2;
 
-      if (b.classList.contains("borboleta-frente")) {
-        escalaBase *= 1.8;
-      }
+      if (b.classList.contains("borboleta-frente")) escala *= 1.9;
+      if (b.classList.contains("borboleta-fundo")) escala *= 0.65;
 
-      if (b.classList.contains("borboleta-fundo")) {
-        escalaBase *= 0.7;
-      }
-
-      let escala = escalaBase;
-
-      /* gira conforme direção */
+      /* rotação independente */
+      let rotacaoExtra = (Math.random() - 0.5) * 180;
       let angulo = Math.atan2(y, x) * (180 / Math.PI);
 
       b.style.transform =
         `translate(${x}px, ${y}px)
-         rotate(${angulo}deg)
+         rotate(${angulo + rotacaoExtra}deg)
          scale(${escala})`;
 
       /* asas fora de sincronia */
       b.style.animationDuration =
-        (0.5 + Math.random() * 0.6) + "s";
+        (0.5 + Math.random() * 0.7) + "s";
 
       b.style.opacity = "0";
 
     }, 50);
 
-    let tempo = 6000;
+    let tempo = 10000; // +4 segundos
 
-    if (b.classList.contains("borboleta-frente")) {
-      tempo = 7200;
-    }
-
-    if (b.classList.contains("borboleta-fundo")) {
-      tempo = 5000;
-    }
+    if (b.classList.contains("borboleta-frente")) tempo += 1200;
+    if (b.classList.contains("borboleta-fundo")) tempo -= 1200;
 
     setTimeout(() => b.remove(), tempo);
   }
 
   vooContinuoBorboletas();
 
-  setTimeout(() => navegar("menu.html"), 3800);
+  setTimeout(() => navegar("menu.html"), 5200);
 }
 
 /* ========================= */
-/* CONTINUAÇÃO DO VOO */
+/* VOO CONTÍNUO */
 /* ========================= */
 function vooContinuoBorboletas() {
 
-  let duracao = 3000;
+  let duracao = 5000;
 
   let intervalo = setInterval(() => {
 
@@ -171,19 +159,20 @@ function vooContinuoBorboletas() {
 
     setTimeout(() => {
 
-      let escala = 1.5 + Math.random() * 1.5;
+      let escala = 1.5 + Math.random() * 1.8;
 
       b.style.transform =
-        `translate(${window.innerWidth + 200}px, -100px)
+        `translate(${window.innerWidth + 200}px,
+                   ${Math.random()*200 - 100}px)
          scale(${escala})`;
 
       b.style.opacity = "0";
 
     }, 50);
 
-    setTimeout(() => b.remove(), 6500);
+    setTimeout(() => b.remove(), 9000);
 
-  }, 300);
+  }, 220);
 
   setTimeout(() => clearInterval(intervalo), duracao);
 }
