@@ -55,7 +55,18 @@ button {
   cursor: pointer;
   margin: 6px 0;
 
-  background: linear-gradient(45deg, #7ec8ff, #4fa3e3);
+  background: linear-gradient(45deg, #6fb8ff, #3b8edb);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+
+  transition: 0.25s;
+}
+
+button:hover {
+  transform: scale(1.04);
+}
+
+button:active {
+  transform: scale(0.97);
 }
 
 .menu button {
