@@ -49,3 +49,30 @@ function verificarLimiteConfirmacao() {
 }
 
 verificarLimiteConfirmacao();
+function borboletasConvite() {
+
+  for (let i = 0; i < 12; i++) {
+
+    let b = document.createElement("img");
+    b.src = "img/borboleta.png"; // imagem da borboleta
+    b.className = "borboleta";
+
+    b.style.left = "50%";
+    b.style.top = "50%";
+    b.style.opacity = "1";
+
+    document.body.appendChild(b);
+
+    setTimeout(() => {
+      let x = (Math.random() - 0.5) * window.innerWidth;
+      let y = (Math.random() - 0.5) * window.innerHeight;
+
+      b.style.transform =
+        `translate(${x}px, ${y}px) scale(${1.5 + Math.random()})`;
+
+      b.style.opacity = "0";
+    }, 50);
+
+    setTimeout(() => b.remove(), 2000);
+  }
+}
