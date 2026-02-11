@@ -364,3 +364,6 @@ body {
 body.fade-out {
   opacity: 0;
 }
+.texto-justificado p {
+  text-align: justify;
+}
