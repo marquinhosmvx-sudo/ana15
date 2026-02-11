@@ -6,6 +6,7 @@ body {
 /* Fundo padrão */
 .page {
   min-height: 100vh;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -17,6 +18,8 @@ body {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
+
+  background-attachment: fixed;
 }
 
 /* Layout */
