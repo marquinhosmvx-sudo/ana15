@@ -245,3 +245,16 @@ button:active {
 .borboleta-frente {
   z-index: 999;
 }
+.galeria-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.galeria-home img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
