@@ -218,8 +218,13 @@ button:hover {
 /* ========================= */
 /* RESPONSIVIDADE CELULAR */
 /* ========================= */
-
 @media (max-width: 600px) {
+
+  body {
+    background-position: center top;
+    background-size: contain;
+    background-color: #000;
+  }
 
   .titulo {
     font-size: 34px;
@@ -234,6 +239,7 @@ button:hover {
     padding: 14px 20px;
   }
 }
+
 /* Botão voltar */
 .botao-voltar {
   margin-top: 10px;
