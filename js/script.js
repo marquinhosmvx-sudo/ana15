@@ -28,3 +28,24 @@ function atualizarContador() {
 
 setInterval(atualizarContador, 60000);
 atualizarContador();
+
+/* Limite confirmação */
+function verificarLimiteConfirmacao() {
+
+  let limite = new Date("2026-04-15T23:59:00");
+  let agora = new Date();
+
+  let iframe = document.getElementById("form-confirmacao");
+  let msg = document.getElementById("limite-msg");
+
+  if (!iframe || !msg) return;
+
+  if (agora > limite) {
+    iframe.style.display = "none";
+
+    msg.innerHTML =
+      "<p style='color:white;'>O prazo para confirmação foi encerrado.</p>";
+  }
+}
+
+verificarLimiteConfirmacao();
