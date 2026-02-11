@@ -78,11 +78,27 @@ function explodirBorboletas(botao) {
 
     setTimeout(() => {
 
-      let x = (Math.random() - 0.5) * window.innerWidth * 1.8;
-      let y = (Math.random() - 0.5) * window.innerHeight * 1.8;
+let x = (Math.random() - 0.5) * window.innerWidth * 1.8;
+let y = (Math.random() - 0.5) * window.innerHeight * 1.8;
 
-      let escala = 1.8 + Math.random() * 2.5;
+/* algumas descem mais */
+if (Math.random() > 0.6) {
+  y += window.innerHeight * 0.6;
+}
 
+let escala = 1.8 + Math.random() * 2.5;
+
+/* calcula direção para girar borboleta */
+let angulo = Math.atan2(y, x) * (180 / Math.PI);
+
+b.style.transform =
+  `translate(${x}px, ${y}px)
+   rotate(${angulo}deg)
+   scale(${escala})`;
+
+/* asas fora de sincronia */
+b.style.animationDuration =
+  (0.5 + Math.random() * 0.5) + "s";
       b.style.transform =
         `translate(${x}px, ${y}px) scale(${escala})`;
 
