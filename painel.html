@@ -1,4 +1,4 @@
-<!--  -->
+<!-- -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,20 +13,24 @@
 
 <div class="page">
 
-<div class="topo"></div>
-
 <div class="centro">
 
 <div class="card-local">
+<h3>Resumo de Presença</h3>
 
-<h3>Painel de Confirmações</h3>
+<p>Total respostas: <span id="total">0</span></p>
+<p>Confirmados: <span id="confirmados">0</span></p>
+<p>Acompanhantes: <span id="acompanhantes">0</span></p>
 
-<p>Atualização automática das respostas.</p>
+</div>
+
+<div class="card-local">
+<h3>Lista completa</h3>
 
 <iframe
-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQK4QnkA32CW7GjNqyzTFD8BSeb6zJDMpqr2nd8HO6CEFkE52G1sloZa5EIceLU-o0XP9WoxrFnj0YT/pubhtml"
+src="LINK_PLANILHA_WEB"
 width="100%"
-height="600"
+height="500"
 frameborder="0">
 </iframe>
 
@@ -36,12 +40,49 @@ frameborder="0">
 
 <div class="rodape">
 <button class="botao-voltar" onclick="navegar('menu.html')">
-Voltar ao menu
+Voltar
 </button>
 </div>
 
 </div>
 
 <script src="js/script.js"></script>
+
+<script>
+const csvURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQK4QnkA32CW7GjNqyzTFD8BSeb6zJDMpqr2nd8HO6CEFkE52G1sloZa5EIceLU-o0XP9WoxrFnj0YT/pub?gid=2065005834&single=true&output=csv ";
+
+fetch(csvURL)
+  .then(res => res.text())
+  .then(text => {
+
+    const linhas = text.split("\n").slice(1);
+
+    let total = 0;
+    let confirmados = 0;
+    let acompanhantes = 0;
+
+    linhas.forEach(linha => {
+      if (!linha.trim()) return;
+
+      total++;
+
+      const colunas = linha.split(",");
+
+      // ajuste conforme ordem do seu forms
+      const resposta = colunas[2] || "";
+      const qtd = parseInt(colunas[3]) || 0;
+
+      if (resposta.toLowerCase().includes("sim"))
+        confirmados++;
+
+      acompanhantes += qtd;
+    });
+
+    document.getElementById("total").innerText = total;
+    document.getElementById("confirmados").innerText = confirmados;
+    document.getElementById("acompanhantes").innerText = acompanhantes;
+  });
+</script>
+
 </body>
 </html>
