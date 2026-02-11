@@ -95,7 +95,7 @@ function criarBorboleta(origemX, origemY) {
 
   let b = document.createElement("img");
   b.src = "img/borboleta.gif";
-  b.className = "borboleta";
+  b.className = "borboleta borboleta-fundo";
 
   let camada = Math.random();
 
@@ -114,6 +114,10 @@ function criarBorboleta(origemX, origemY) {
   b.style.top = (origemY + offsetY) + "px";
 
   document.body.appendChild(b);
+  setTimeout(() => {
+  b.classList.remove("borboleta-fundo");
+  b.classList.add("borboleta-frente");
+}, 300);
 
   setTimeout(() => {
 
