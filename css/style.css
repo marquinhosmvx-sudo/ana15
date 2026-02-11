@@ -280,5 +280,14 @@ button:active {
   transform: skewX(-25deg);
   opacity: 0;
 }
+.brilho-ativo::after {
+  animation: brilhoBotao 1.2s ease-out;
+  opacity: 1;
+}
+
+@keyframes brilhoBotao {
+  from { left: -80%; }
+  to   { left: 140%; }
+}
 
 
