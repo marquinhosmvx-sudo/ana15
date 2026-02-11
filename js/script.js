@@ -49,17 +49,19 @@ function verificarLimiteConfirmacao() {
 }
 
 verificarLimiteConfirmacao();
-function borboletasConvite() {
+function explodirBorboletas(botao) {
 
-  let quantidade = 45; // MUITAS borboletas
+  let quantidade = 70; // MUITAS borboletas
+
+  /* posição do botão */
+  let rect = botao.getBoundingClientRect();
+  let origemX = rect.left + rect.width / 2;
+  let origemY = rect.top + rect.height / 2;
 
   for (let i = 0; i < quantidade; i++) {
 
     let b = document.createElement("img");
-
-    /* AJUSTE O NOME SE NECESSÁRIO */
     b.src = "img/borboleta.gif";
-
     b.className = "borboleta";
 
     if (Math.random() > 0.5) {
@@ -68,18 +70,17 @@ function borboletasConvite() {
       b.classList.add("borboleta-fundo");
     }
 
-    /* origem no botão */
-    b.style.left = "50%";
-    b.style.top = "55%";
+    b.style.left = origemX + "px";
+    b.style.top = origemY + "px";
 
     document.body.appendChild(b);
 
     setTimeout(() => {
 
-      let x = (Math.random() - 0.5) * window.innerWidth * 1.6;
-      let y = (Math.random() - 0.5) * window.innerHeight * 1.6;
+      let x = (Math.random() - 0.5) * window.innerWidth * 1.8;
+      let y = (Math.random() - 0.5) * window.innerHeight * 1.8;
 
-      let escala = 1.5 + Math.random() * 2.2;
+      let escala = 1.8 + Math.random() * 2.5;
 
       b.style.transform =
         `translate(${x}px, ${y}px) scale(${escala})`;
@@ -88,6 +89,9 @@ function borboletasConvite() {
 
     }, 50);
 
-    setTimeout(() => b.remove(), 4200);
+    setTimeout(() => b.remove(), 6200);
   }
+
+  /* navega após animação */
+  setTimeout(() => navegar("menu.html"), 3800);
 }
