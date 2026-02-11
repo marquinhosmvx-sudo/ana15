@@ -11,7 +11,8 @@ function entrar() {
   explosaoBorboletas();
 
   setTimeout(() => {
-    window.location.href = "menu.html";
+    navegar("menu.html");
+
   }, 2500);
 }
 
