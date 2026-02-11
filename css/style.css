@@ -174,4 +174,37 @@ button:active {
 .botao-selo:hover {
   transform: scale(1.05);
 }
+/* Brilho suave do botão convite */
+.botao-selo {
+  position: relative;
+  overflow: hidden;
+}
+
+.botao-selo::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 50%;
+  height: 200%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+
+  transform: rotate(25deg);
+  animation: brilhoConvite 4s infinite;
+}
+
+@keyframes brilhoConvite {
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 130%;
+  }
+}
 
