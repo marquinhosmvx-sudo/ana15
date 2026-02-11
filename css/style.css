@@ -207,4 +207,10 @@ button:active {
     left: 130%;
   }
 }
+.texto-home {
+  margin-top: 30px;
+  color: #143a5a;
+  font-size: 18px;
+  line-height: 1.4;
+}
 
