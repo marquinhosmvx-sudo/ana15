@@ -207,10 +207,12 @@ button:active {
     left: 130%;
   }
 }
-.texto-home {
-  margin-top: 30px;
-  color: #143a5a;
-  font-size: 18px;
-  line-height: 1.4;
+/* Borboletas animadas */
+.borboleta {
+  position: fixed;
+  width: 32px;
+  pointer-events: none;
+  z-index: 999;
+  transition: transform 2s ease-out, opacity 2s ease-out;
 }
 
