@@ -69,11 +69,12 @@ button {
 
 /* Cartões */
 .card-local {
-  background: white;
-  padding: 18px;
-  border-radius: 18px;
+  background: rgba(255,255,255,0.95);
+  padding: 20px;
+  border-radius: 22px;
   margin-bottom: 18px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  backdrop-filter: blur(3px);
 }
 }
 
