@@ -99,3 +99,11 @@ function abrirMapa(tipo) {
 
   window.open(url, "_blank");
 }
+function navegar(pagina) {
+  document.body.classList.remove("fade-in");
+  document.body.classList.add("fade-out");
+
+  setTimeout(() => {
+    window.location.href = pagina;
+  }, 500);
+}
