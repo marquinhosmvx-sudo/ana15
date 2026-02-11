@@ -65,11 +65,16 @@ function explodirBorboletas(botao) {
     b.src = "img/borboleta.gif";
     b.className = "borboleta";
 
-    if (Math.random() > 0.5) {
-      b.classList.add("borboleta-frente");
-    } else {
-      b.classList.add("borboleta-fundo");
-    }
+/* define profundidade */
+let camada = Math.random();
+
+if (camada < 0.4) {
+  b.classList.add("borboleta-fundo");
+} else if (camada < 0.75) {
+  b.classList.add("borboleta-meio");
+} else {
+  b.classList.add("borboleta-frente");
+}
 
     b.style.left = origemX + "px";
     b.style.top = origemY + "px";
