@@ -7,11 +7,15 @@ body {
 /* HOME */
 .home {
   height: 100vh;
-  background: url("../img/fundo.png") center/cover no-repeat;
+  background: url("../img/fundo.jpg") center/cover no-repeat;
+
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+
+  padding-top: 15vh;
 }
+
 
 /* Caixa central */
 .overlay {
@@ -201,4 +205,20 @@ button:hover {
 
 .card-local p {
   color: #555;
+}
+/* Ajuste especial para celular */
+@media (max-width: 600px) {
+
+  .home {
+    background-position: center top;
+    padding-top: 10vh;
+  }
+
+  .titulo {
+    font-size: 36px;
+  }
+
+  #contador {
+    font-size: 16px;
+  }
 }
