@@ -95,3 +95,36 @@ function explodirBorboletas(botao) {
   /* navega após animação */
   setTimeout(() => navegar("menu.html"), 3800);
 }
+function vooContinuoBorboletas() {
+
+  let duracao = 3000; // tempo de continuação
+
+  let intervalo = setInterval(() => {
+
+    let b = document.createElement("img");
+    b.src = "img/borboleta.gif";
+    b.className = "borboleta borboleta-frente";
+
+    /* nasce na lateral */
+    b.style.left = "-40px";
+    b.style.top = Math.random() * window.innerHeight + "px";
+
+    document.body.appendChild(b);
+
+    setTimeout(() => {
+
+      let escala = 1.5 + Math.random() * 1.5;
+
+      b.style.transform =
+        `translate(${window.innerWidth + 200}px, -100px) scale(${escala})`;
+
+      b.style.opacity = "0";
+
+    }, 50);
+
+    setTimeout(() => b.remove(), 4000);
+
+  }, 300);
+
+  setTimeout(() => clearInterval(intervalo), duracao);
+}
