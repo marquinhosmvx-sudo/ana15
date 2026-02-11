@@ -88,7 +88,8 @@ function explodirBorboletas(botao) {
 
   vooContinuoBorboletas();
 
-  setTimeout(() => navegar("menu.html"), duracaoTotal);
+  setTimeout(() => navegar("menu.html"), 3000);
+
 }
 
 /* ========================= */
@@ -156,7 +157,7 @@ function criarBorboleta(origemX, origemY) {
 
   }, 50);
 
-  setTimeout(() => b.remove(), 9000);
+  setTimeout(() => b.remove(), 6500);
 }
 
 /* ========================= */
@@ -164,7 +165,7 @@ function criarBorboleta(origemX, origemY) {
 /* ========================= */
 function vooContinuoBorboletas() {
 
-  let duracao = 5000;
+  let duracao = 3000;
 
   let intervalo = setInterval(() => {
 
