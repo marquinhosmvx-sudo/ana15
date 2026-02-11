@@ -1,25 +1,29 @@
 /* ========================= */
-/* CONFIGURAÇÃO GERAL */
+/* CONFIGURAÇÃO GLOBAL */
 /* ========================= */
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
-
-  background: url("../img/fundo.png") no-repeat center center;
-  background-size: cover;
 }
 
+/* ========================= */
+/* LAYOUT PADRÃO DAS PÁGINAS */
+/* ========================= */
 
-/* Layout padrão das páginas */
 .page {
-  height: 100vh;
+  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
   padding: 20px;
+
+  /* Fundo padrão do site */
+  background: url("../img/fundo.png") no-repeat center center;
+  background-size: cover;
 }
 
 /* ========================= */
@@ -88,6 +92,23 @@ body {
   }
 }
 
+/* Mensagem do dia da festa */
+.dia-festa {
+  font-size: 22px;
+  font-weight: bold;
+
+  animation: brilhoFesta 2s ease-in-out infinite alternate;
+}
+
+@keyframes brilhoFesta {
+  from {
+    text-shadow: 0 0 10px white, 0 0 20px #9ed9ff;
+  }
+  to {
+    text-shadow: 0 0 20px white, 0 0 40px #9ed9ff;
+  }
+}
+
 /* ========================= */
 /* BOTÕES */
 /* ========================= */
@@ -122,7 +143,7 @@ button:hover {
   margin: 8px 0;
 }
 
-/* Botão da Home aparece depois */
+/* Botão aparecer suavemente */
 .botao-entrar {
   opacity: 0;
   transform: translateY(20px);
@@ -135,6 +156,14 @@ button:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Botão voltar */
+.botao-voltar {
+  margin-top: 10px;
+  background: rgba(255,255,255,0.85);
+  color: #4fa3e3;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
 /* ========================= */
@@ -167,7 +196,7 @@ button:hover {
 }
 
 /* ========================= */
-/* CARTÕES DE CONTEÚDO */
+/* CARTÕES */
 /* ========================= */
 
 .card-local {
@@ -200,7 +229,7 @@ button:hover {
 }
 
 /* ========================= */
-/* PARTÍCULAS MÁGICAS */
+/* PARTÍCULAS */
 /* ========================= */
 
 .sparkle {
@@ -216,12 +245,13 @@ button:hover {
 }
 
 /* ========================= */
-/* RESPONSIVIDADE CELULAR */
+/* RESPONSIVIDADE */
 /* ========================= */
+
 @media (max-width: 600px) {
 
-  body {
-    background-position: center;
+  .page {
+    background-position: center top;
     background-size: cover;
   }
 
@@ -236,46 +266,5 @@ button:hover {
   button {
     font-size: 16px;
     padding: 14px 20px;
-  }
-}
-/* Botão voltar */
-.botao-voltar {
-  margin-top: 10px;
-  background: rgba(255,255,255,0.85);
-  color: #4fa3e3;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
-
-.botao-voltar:hover {
-  transform: scale(1.05);
-}
-/* Transição entre páginas */
-body {
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-body.fade-in {
-  opacity: 1;
-}
-
-body.fade-out {
-  opacity: 0;
-}
-
-/* Mensagem do dia da festa */
-.dia-festa {
-  font-size: 22px;
-  font-weight: bold;
-
-  animation: brilhoFesta 2s ease-in-out infinite alternate;
-}
-
-@keyframes brilhoFesta {
-  from {
-    text-shadow: 0 0 10px white, 0 0 20px #9ed9ff;
-  }
-  to {
-    text-shadow: 0 0 20px white, 0 0 40px #9ed9ff;
   }
 }
