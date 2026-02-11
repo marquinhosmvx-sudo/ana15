@@ -1,5 +1,10 @@
 function navegar(pagina) {
-  window.location.href = pagina;
+
+  document.body.classList.add("fade-out");
+
+  setTimeout(() => {
+    window.location.href = pagina;
+  }, 400);
 }
 
 /* ========================= */
@@ -197,3 +202,7 @@ function vooContinuoBorboletas() {
 
   setTimeout(() => clearInterval(intervalo), duracao);
 }
+window.addEventListener("pageshow", () => {
+  document.body.classList.remove("fade-out");
+});
+
