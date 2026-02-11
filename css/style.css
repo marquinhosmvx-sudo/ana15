@@ -381,3 +381,22 @@ body.fade-out {
   height: 40px;
   border-radius: 8px;
 }
+
+/* ===== BOTÕES DO MENU — CORREÇÃO FINAL ===== */
+.menu-botao {
+  width: 100%;
+  max-width: 420px;
+  margin: 6px auto;
+  padding: 14px;
+  border-radius: 30px;
+
+  border: none !important;          /* remove borda branca */
+  outline: none !important;
+  box-shadow: none !important;
+
+  background: #4f8fc4 !important;   /* azul mais claro */
+  color: white;
+
+  font-size: clamp(14px, 4vw, 18px);
+  display: block;
+}
