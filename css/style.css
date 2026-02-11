@@ -73,7 +73,18 @@ button:active {
 }
 
 .menu-botao,
-.botao-voltar,
+.botao-voltar {
+  width: auto;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  background: white;
+  color: #143a5a;
+  font-size: 14px;
+  margin: 10px auto;
+  display: block;
+}
+
 .card-local button {
   width: 100%;
   max-width: 420px;
