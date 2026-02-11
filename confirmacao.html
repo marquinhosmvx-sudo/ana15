@@ -1,7 +1,56 @@
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdRwQhS5zrnbC45uN4kexs4PL0pMQbWFZS3kMgUdkcBq9EjPQ/viewform?embedded=true" width="640" height="657" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+<!--iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdRwQhS5zrnbC45uN4kexs4PL0pMQbWFZS3kMgUdkcBq9EjPQ/viewform?embedded=true" width="640" height="657" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confirmação de Presença</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="topo"></div>
+
+<div class="centro">
+
+<div class="card-local">
+
+<h3>Confirme sua presença</h3>
+
+<form class="formulario">
+
+<input type="text" placeholder="Seu nome" required>
+
+<select required>
+<option value="">Você irá comparecer?</option>
+<option>Sim, estarei presente</option>
+<option>Não poderei ir</option>
+</select>
+
+<input type="number" placeholder="Número de acompanhantes">
+
+<textarea placeholder="Mensagem opcional"></textarea>
+
+<button type="submit">Enviar confirmação</button>
+
+</form>
+
+</div>
+
+</div>
+
 <div class="rodape">
-<button class="botao-voltar"
-onclick="location.href='menu.html'">
+<button class="botao-voltar" onclick="navegar('menu.html')">
 Voltar ao menu
 </button>
 </div>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
