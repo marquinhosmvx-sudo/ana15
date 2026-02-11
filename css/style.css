@@ -1,17 +1,9 @@
-/* ========================= */
-/* CONFIGURAÇÃO GLOBAL */
-/* ========================= */
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  overflow-x: hidden;
 }
 
-/* ========================= */
-/* LAYOUT PADRÃO DAS PÁGINAS */
-/* ========================= */
-
+/* Fundo padrão */
 .page {
   min-height: 100vh;
 
@@ -21,98 +13,36 @@ body {
   text-align: center;
   padding: 20px;
 
-  /* Fundo padrão do site */
-  background: url("../img/fundo.png") no-repeat center center;
+  background-image: url("../img/fundo.png");
+  background-repeat: no-repeat;
+  background-position: center top;
   background-size: cover;
 }
 
-/* ========================= */
-/* TOPO / CENTRO / RODAPÉ */
-/* ========================= */
-
+/* Layout */
 .topo {
-  margin-top: 10px;
+  height: 40px;
 }
 
 .centro {
+  flex-grow: 1;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
+  flex-direction: column;
 }
 
 .rodape {
   margin-bottom: 20px;
 }
 
-/* ========================= */
-/* TÍTULO ANA MARIA */
-/* ========================= */
-
-.titulo {
-  color: white;
-  font-size: 42px;
-  letter-spacing: 2px;
-  font-weight: 300;
-
-  text-shadow:
-    0 0 10px rgba(255,255,255,0.7),
-    0 0 25px rgba(158,217,255,0.6);
-
-  opacity: 0;
-  transform: translateY(20px);
-  animation: surgirTitulo 2.5s ease-out forwards;
-}
-
-@keyframes surgirTitulo {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ========================= */
-/* CONTADOR */
-/* ========================= */
-
+/* Contador */
 #contador {
   color: white;
   font-size: 18px;
-  text-shadow: 0 0 10px rgba(0,0,0,0.5);
-
-  opacity: 0;
-  animation: surgirContador 2s ease-out forwards;
-  animation-delay: 1.5s;
 }
 
-@keyframes surgirContador {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Mensagem do dia da festa */
-.dia-festa {
-  font-size: 22px;
-  font-weight: bold;
-
-  animation: brilhoFesta 2s ease-in-out infinite alternate;
-}
-
-@keyframes brilhoFesta {
-  from {
-    text-shadow: 0 0 10px white, 0 0 20px #9ed9ff;
-  }
-  to {
-    text-shadow: 0 0 20px white, 0 0 40px #9ed9ff;
-  }
-}
-
-/* ========================= */
-/* BOTÕES */
-/* ========================= */
-
+/* Botões */
 button {
   padding: 15px 30px;
   border-radius: 30px;
@@ -120,56 +50,29 @@ button {
   font-size: 18px;
   color: white;
   cursor: pointer;
+  margin: 6px 0;
 
   background: linear-gradient(45deg, #7ec8ff, #4fa3e3);
-
-  box-shadow:
-    0 0 10px rgba(126,200,255,0.6),
-    inset 0 0 8px rgba(255,255,255,0.4);
-
-  transition: 0.4s;
 }
 
-button:hover {
-  transform: scale(1.05);
-  box-shadow:
-    0 0 20px rgba(126,200,255,0.9),
-    inset 0 0 10px rgba(255,255,255,0.6);
-}
-
-/* Botões do menu */
 .menu button {
   width: 90%;
-  margin: 8px 0;
 }
 
-/* Botão aparecer suavemente */
-.botao-entrar {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: surgirBotao 2s ease-out forwards;
-  animation-delay: 2s;
-}
-
-@keyframes surgirBotao {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Botão voltar */
 .botao-voltar {
-  margin-top: 10px;
-  background: rgba(255,255,255,0.85);
+  background: white;
   color: #4fa3e3;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
-/* ========================= */
-/* FORMULÁRIOS */
-/* ========================= */
+/* Cartões */
+.card-local {
+  background: white;
+  padding: 16px;
+  border-radius: 18px;
+  margin-bottom: 15px;
+}
 
+/* Formulários */
 .formulario {
   display: flex;
   flex-direction: column;
@@ -182,108 +85,11 @@ button:hover {
   padding: 14px;
   border-radius: 14px;
   border: none;
-  font-size: 16px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
 }
 
-.formulario textarea {
-  resize: none;
-  height: 80px;
-}
-
-.formulario button {
-  margin-top: 12px;
-}
-
-/* ========================= */
-/* CARTÕES */
-/* ========================= */
-
-.card-local {
-  background: white;
-  padding: 16px;
-  border-radius: 18px;
-  margin-bottom: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.card-local h3 {
-  margin-top: 0;
-  color: #4fa3e3;
-}
-
-.card-local p {
-  color: #555;
-}
-
-/* ========================= */
-/* BORBOLETAS */
-/* ========================= */
-
-.butterfly {
-  position: absolute;
-  width: 30px;
-  pointer-events: none;
-  opacity: 0.9;
-  transition: transform 4s ease-out, opacity 4s ease-out;
-}
-
-/* ========================= */
-/* PARTÍCULAS */
-/* ========================= */
-
-.sparkle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.8;
-  pointer-events: none;
-  box-shadow: 0 0 8px white, 0 0 15px #9ed9ff;
-  transition: transform 6s linear, opacity 6s linear;
-}
-
-/* ========================= */
-/* RESPONSIVIDADE AVANÇADA */
-/* ========================= */
-
+/* Responsivo */
 @media (max-width: 600px) {
-
-  .page {
-    background-position: center top;
-    background-size: cover;
-  }
-
-  .titulo {
-    font-size: 34px;
-  }
-
-  #contador {
-    font-size: 16px;
-  }
-
   button {
     font-size: 16px;
-    padding: 14px 20px;
-  }
-}
-
-/* Telas muito altas (celulares modernos) */
-@media (min-aspect-ratio: 9/19) {
-
-  .page {
-    background-position: center top;
-    background-size: contain;
-    background-color: #000;
-  }
-}
-
-/* Telas mais largas */
-@media (max-aspect-ratio: 9/16) {
-
-  .page {
-    background-position: center center;
-    background-size: cover;
   }
 }
