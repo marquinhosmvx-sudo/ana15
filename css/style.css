@@ -245,7 +245,7 @@ button:hover {
 }
 
 /* ========================= */
-/* RESPONSIVIDADE */
+/* RESPONSIVIDADE AVANÇADA */
 /* ========================= */
 
 @media (max-width: 600px) {
@@ -266,5 +266,24 @@ button:hover {
   button {
     font-size: 16px;
     padding: 14px 20px;
+  }
+}
+
+/* Telas muito altas (celulares modernos) */
+@media (min-aspect-ratio: 9/19) {
+
+  .page {
+    background-position: center top;
+    background-size: contain;
+    background-color: #000;
+  }
+}
+
+/* Telas mais largas */
+@media (max-aspect-ratio: 9/16) {
+
+  .page {
+    background-position: center center;
+    background-size: cover;
   }
 }
