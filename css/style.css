@@ -367,3 +367,17 @@ body.fade-out {
 .texto-justificado p {
   text-align: justify;
 }
+
+/* Paleta de cores Dress Code */
+.paleta-cores {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0 6px;
+}
+
+.paleta-cores .cor {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
