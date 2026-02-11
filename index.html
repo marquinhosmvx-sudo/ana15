@@ -14,6 +14,11 @@
 
 <div class="topo"></div>
 
+<div class="centro">
+
+<!-- ===== CONVITE ATUAL ===== -->
+<div id="convite">
+
 <div class="convite-home">
 
 
@@ -22,6 +27,29 @@ onclick="explodirBorboletas(this)">
 Meus Quinze Anos
 </button>
 
+</div>
+
+</div>
+
+<!-- ===== PÓS FESTA ===== -->
+<div id="posfesta" style="display:none;">
+
+<div class="card-local">
+
+<h2>Obrigado por fazer parte</h2>
+
+<p>
+Os 15 anos da Ana Maria foram inesquecíveis.
+Obrigado por compartilhar este momento!
+</p>
+
+<button onclick="navegar('album.html')">
+📷 Ver fotos da festa
+</button>
+
+</div>
+
+</div>
 
 </div>
 
@@ -32,5 +60,17 @@ Meus Quinze Anos
 </div>
 
 <script src="js/script.js"></script>
+
+<script>
+/* DATA DO EVENTO */
+const dataEvento = new Date("2026-05-16T23:59:00");
+const agora = new Date();
+
+if (agora > dataEvento) {
+  document.getElementById("convite").style.display = "none";
+  document.getElementById("posfesta").style.display = "block";
+}
+</script>
+
 </body>
 </html>
