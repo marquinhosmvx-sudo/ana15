@@ -1,3 +1,8 @@
+/* Fade ao entrar na página */
+window.addEventListener("load", () => {
+  document.body.classList.add("fade-in");
+});
+
 window.onload = () => {
   criarBorboletasFundo();
 };
