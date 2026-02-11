@@ -54,89 +54,102 @@ function verificarLimiteConfirmacao() {
 verificarLimiteConfirmacao();
 
 /* ========================= */
-/* EXPLOSÃO PRINCIPAL */
+/* BORBOLETAS OTIMIZADAS */
 /* ========================= */
 function explodirBorboletas(botao) {
 
-  let quantidade = 300; // MAIS borboletas
+  const totalBorboletas = 500;
+  const porLote = 25; // criadas em ondas
+  const duracaoTotal = 8000;
 
   let rect = botao.getBoundingClientRect();
   let origemX = rect.left + rect.width / 2;
   let origemY = rect.top + rect.height / 2;
 
-  for (let i = 0; i < quantidade; i++) {
+  let criadas = 0;
 
-    let b = document.createElement("img");
-    b.src = "img/borboleta.gif";
-    b.className = "borboleta";
+  let intervalo = setInterval(() => {
 
-    let camada = Math.random();
+    for (let i = 0; i < porLote; i++) {
 
-    if (camada < 0.4) {
-      b.classList.add("borboleta-fundo");
-    } else if (camada < 0.75) {
-      b.classList.add("borboleta-meio");
-    } else {
-      b.classList.add("borboleta-frente");
-    }
-
-    /* variação inicial */
-    let offsetX = (Math.random() - 0.5) * 60;
-    let offsetY = (Math.random() - 0.5) * 60;
-
-    b.style.left = (origemX + offsetX) + "px";
-    b.style.top = (origemY + offsetY) + "px";
-
-    document.body.appendChild(b);
-
-    setTimeout(() => {
-
-      /* espalhamento real 360° */
-      let anguloRad = Math.random() * Math.PI * 2;
-      let distancia = window.innerHeight * (0.8 + Math.random());
-
-      let x = Math.cos(anguloRad) * distancia;
-      let y = Math.sin(anguloRad) * distancia;
-
-      /* algumas descem mais */
-      if (Math.random() > 0.6) {
-        y += window.innerHeight * 0.5;
+      if (criadas >= totalBorboletas) {
+        clearInterval(intervalo);
+        break;
       }
 
-      /* escala por profundidade */
-      let escala = 1.4 + Math.random() * 2.2;
+      criarBorboleta(origemX, origemY);
+      criadas++;
+    }
 
-      if (b.classList.contains("borboleta-frente")) escala *= 1.9;
-      if (b.classList.contains("borboleta-fundo")) escala *= 0.65;
-
-      /* rotação independente */
-      let rotacaoExtra = (Math.random() - 0.5) * 180;
-      let angulo = Math.atan2(y, x) * (180 / Math.PI);
-
-      b.style.transform =
-        `translate(${x}px, ${y}px)
-         rotate(${angulo + rotacaoExtra}deg)
-         scale(${escala})`;
-
-      /* asas fora de sincronia */
-      b.style.animationDuration =
-        (0.5 + Math.random() * 0.7) + "s";
-
-      b.style.opacity = "0";
-
-    }, 50);
-
-    let tempo = 16000; // +4 segundos
-
-    if (b.classList.contains("borboleta-frente")) tempo += 1200;
-    if (b.classList.contains("borboleta-fundo")) tempo -= 1200;
-
-    setTimeout(() => b.remove(), tempo);
-  }
+  }, 120);
 
   vooContinuoBorboletas();
 
-  setTimeout(() => navegar("menu.html"), 6500);
+  setTimeout(() => navegar("menu.html"), duracaoTotal);
+}
+
+/* ========================= */
+/* CRIA BORBOLETA */
+/* ========================= */
+function criarBorboleta(origemX, origemY) {
+
+  let b = document.createElement("img");
+  b.src = "img/borboleta.gif";
+  b.className = "borboleta";
+
+  let camada = Math.random();
+
+  if (camada < 0.4) {
+    b.classList.add("borboleta-fundo");
+  } else if (camada < 0.75) {
+    b.classList.add("borboleta-meio");
+  } else {
+    b.classList.add("borboleta-frente");
+  }
+
+  let offsetX = (Math.random() - 0.5) * 80;
+  let offsetY = (Math.random() - 0.5) * 80;
+
+  b.style.left = (origemX + offsetX) + "px";
+  b.style.top = (origemY + offsetY) + "px";
+
+  document.body.appendChild(b);
+
+  setTimeout(() => {
+
+    let anguloRad = Math.random() * Math.PI * 2;
+    let distancia = window.innerHeight * (0.8 + Math.random());
+
+    let x = Math.cos(anguloRad) * distancia;
+    let y = Math.sin(anguloRad) * distancia;
+
+    if (Math.random() > 0.6)
+      y += window.innerHeight * 0.5;
+
+    let escala = 1.4 + Math.random() * 2;
+
+    if (b.classList.contains("borboleta-frente"))
+      escala *= 1.9;
+
+    if (b.classList.contains("borboleta-fundo"))
+      escala *= 0.6;
+
+    let rotacaoExtra = (Math.random() - 0.5) * 180;
+    let angulo = Math.atan2(y, x) * (180 / Math.PI);
+
+    b.style.transform =
+      `translate(${x}px, ${y}px)
+       rotate(${angulo + rotacaoExtra}deg)
+       scale(${escala})`;
+
+    b.style.animationDuration =
+      (0.5 + Math.random() * 0.7) + "s";
+
+    b.style.opacity = "0";
+
+  }, 50);
+
+  setTimeout(() => b.remove(), 9000);
 }
 
 /* ========================= */
@@ -172,7 +185,7 @@ function vooContinuoBorboletas() {
 
     setTimeout(() => b.remove(), 9000);
 
-  }, 220);
+  }, 200);
 
   setTimeout(() => clearInterval(intervalo), duracao);
 }
