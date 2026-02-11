@@ -157,7 +157,17 @@ function vooContinuoBorboletas() {
 
     }, 50);
 
-    setTimeout(() => b.remove(), 4000);
+    let tempo = 6000;
+
+if (b.classList.contains("borboleta-frente")) {
+  tempo = 7200;
+}
+
+if (b.classList.contains("borboleta-fundo")) {
+  tempo = 5000;
+}
+
+setTimeout(() => b.remove(), tempo);
 
   }, 300);
 
