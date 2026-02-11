@@ -13,7 +13,7 @@ body {
   justify-content: center;
   align-items: flex-start;
 
-  padding-top: 15vh;
+  padding-top: 8vh;
 }
 
 
@@ -211,11 +211,11 @@ button:hover {
 
   .home {
     background-position: center top;
-    padding-top: 10vh;
+    padding-top: 5vh;
   }
 
   .titulo {
-    font-size: 36px;
+    font-size: 34px;
   }
 
   #contador {
