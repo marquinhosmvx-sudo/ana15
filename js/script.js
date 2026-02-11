@@ -58,7 +58,8 @@ function explodirBorboletas(botao) {
   let origemX = rect.left + rect.width / 2;
   let origemY = rect.top + rect.height / 2;
 
-  for (let i = 0; i < quantidade; i++) {
+  for (let i = 0; i < quantidade; i++)
+ {
 
     let b = document.createElement("img");
     b.src = "img/borboleta.gif";
@@ -91,6 +92,8 @@ function explodirBorboletas(botao) {
 
     setTimeout(() => b.remove(), 6200);
   }
+
+  vooContinuoBorboletas();
 
   /* navega após animação */
   setTimeout(() => navegar("menu.html"), 3800);
