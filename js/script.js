@@ -92,6 +92,17 @@ if (Math.random() > 0.6) {
 }
 
 let escala = 1.8 + Math.random() * 2.5;
+let escalaBase = 1.5 + Math.random() * 2;
+
+if (b.classList.contains("borboleta-frente")) {
+  escalaBase *= 1.8;
+}
+
+if (b.classList.contains("borboleta-fundo")) {
+  escalaBase *= 0.7;
+}
+
+let escala = escalaBase;
 
 /* calcula direção para girar borboleta */
 let angulo = Math.atan2(y, x) * (180 / Math.PI);
