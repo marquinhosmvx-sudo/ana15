@@ -232,3 +232,14 @@ button:hover {
     padding: 14px 20px;
   }
 }
+/* Botão voltar */
+.botao-voltar {
+  margin-top: 10px;
+  background: rgba(255,255,255,0.85);
+  color: #4fa3e3;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.botao-voltar:hover {
+  transform: scale(1.05);
+}
