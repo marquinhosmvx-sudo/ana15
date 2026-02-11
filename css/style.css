@@ -253,4 +253,10 @@ button:active {
   border-radius: 14px;
   object-fit: cover;
 }
+.botao-selo {
+  position: relative;
+  z-index: 2000;
+}
+
+
 
