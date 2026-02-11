@@ -70,9 +70,11 @@ button {
 /* Cartões */
 .card-local {
   background: white;
-  padding: 16px;
+  padding: 18px;
   border-radius: 18px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
 }
 
 /* Formulários */
@@ -110,4 +112,9 @@ button {
 
 button:active {
   transform: scale(0.97);
+}
+@media (min-height: 800px) {
+  .centro {
+    justify-content: center;
+  }
 }
