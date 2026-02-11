@@ -400,3 +400,11 @@ body.fade-out {
   font-size: clamp(14px, 4vw, 18px);
   display: block;
 }
+
+.legenda-cores {
+  text-align: center;
+  font-size: 14px;
+  color: #143a5a;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
