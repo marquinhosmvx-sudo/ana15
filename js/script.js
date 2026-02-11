@@ -58,7 +58,7 @@ verificarLimiteConfirmacao();
 /* ========================= */
 function explodirBorboletas(botao) {
 
-  let quantidade = 110; // MAIS borboletas
+  let quantidade = 300; // MAIS borboletas
 
   let rect = botao.getBoundingClientRect();
   let origemX = rect.left + rect.width / 2;
@@ -126,7 +126,7 @@ function explodirBorboletas(botao) {
 
     }, 50);
 
-    let tempo = 10000; // +4 segundos
+    let tempo = 16000; // +4 segundos
 
     if (b.classList.contains("borboleta-frente")) tempo += 1200;
     if (b.classList.contains("borboleta-fundo")) tempo -= 1200;
@@ -136,7 +136,7 @@ function explodirBorboletas(botao) {
 
   vooContinuoBorboletas();
 
-  setTimeout(() => navegar("menu.html"), 5200);
+  setTimeout(() => navegar("menu.html"), 6500);
 }
 
 /* ========================= */
