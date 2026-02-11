@@ -7,8 +7,10 @@ body {
   font-family: Arial, sans-serif;
   overflow-x: hidden;
 
-  background: url("../img/fundo.png") center/cover no-repeat fixed;
+  background: url("../img/fundo.png") no-repeat center top;
+  background-size: cover;
 }
+
 
 /* Layout padrão das páginas */
 .page {
