@@ -262,3 +262,20 @@ body.fade-in {
 body.fade-out {
   opacity: 0;
 }
+
+/* Mensagem do dia da festa */
+.dia-festa {
+  font-size: 22px;
+  font-weight: bold;
+
+  animation: brilhoFesta 2s ease-in-out infinite alternate;
+}
+
+@keyframes brilhoFesta {
+  from {
+    text-shadow: 0 0 10px white, 0 0 20px #9ed9ff;
+  }
+  to {
+    text-shadow: 0 0 20px white, 0 0 40px #9ed9ff;
+  }
+}
