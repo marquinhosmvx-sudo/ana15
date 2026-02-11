@@ -296,5 +296,12 @@ button:active {
   from { left: -80%; }
   to   { left: 140%; }
 }
+* {
+  box-sizing: border-box;
+}
+
+img, iframe {
+  max-width: 100%;
+}
 
 
