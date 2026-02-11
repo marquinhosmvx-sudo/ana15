@@ -3,49 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Locais do Evento</title>
+<title>Locais</title>
 
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="menu-page">
+<body>
 
-<div class="menu">
+<div class="page">
 
-<h2 class="menu-titulo">Locais do Evento</h2>
+<div class="topo"></div>
+
+<div class="centro">
 
 <div class="card-local">
 <h3>💒 Cerimônia</h3>
-<p id="cerimonia-endereco">
-Av. 2, 539 - Parque Industrial Mingone, Luziânia - GO, 72855-539
-</p>
-
-<button onclick="abrirMapa('CERIMONIA')">
-R3X8+89 Luziânia, GO
+<p>Endereço da cerimônia</p>
+<button onclick="window.open('https://maps.google.com')">
+Abrir no mapa
 </button>
 </div>
 
 <div class="card-local">
 <h3>🎉 Recepção</h3>
-<p id="recepcao-endereco">
-Parque Industrial Mingone, Luziânia - GO
-</p>
+<p>Endereço da recepção</p>
+<button onclick="window.open('https://maps.google.com')">
+Abrir no mapa
+</button>
+</div>
 
-<button onclick="abrirMapa('RECEPCAO')">
-R3VF+J7 Parque Industrial Mingone, Luziânia - GO
+</div>
+
+<div class="rodape">
+<button class="botao-voltar" onclick="navegar('menu.html')">
+Voltar ao menu
 </button>
 </div>
 
 </div>
 
 <script src="js/script.js"></script>
-
 </body>
 </html>
-<div class="rodape">
-<button class="botao-voltar"
-onclick="location.href='menu.html'">
-Voltar ao menu
-</button>
-</div>
