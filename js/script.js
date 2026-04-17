@@ -41,7 +41,7 @@ atualizarContador();
 /* ========================= */
 function verificarLimiteConfirmacao() {
 
-  let limite = new Date("2026-04-15T23:59:00");
+  let limite = new Date("2026-04-25T23:59:00");
   let agora = new Date();
 
   let iframe = document.getElementById("form-confirmacao");
